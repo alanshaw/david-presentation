@@ -10,7 +10,7 @@
 	<link href="talk.css" rel="stylesheet" />
 	<script src="prefixfree.min.js"></script>
 </head>
-<body data-duration="10">
+<body data-duration="30">
 
 <header id="intro" class="slide">
 	<h1>
@@ -162,128 +162,90 @@ david.getUpdatedDependencies(manifest, {dev: false, stable: true}, function(err,
 		<img src="img/crazies.png"/>
 	</section>
 	
-	<section class="slide">
-		<h2>Drawbacks</h2>
-		<ul>
-			<li>Only supports modern browsers. Why?
-				<ul>
-					<li>More lightweight</li>
-					<li>Easier to understand code</li>	
-					<li>It's a presentation, so the environment is controlled anyway</li>
-				</ul>
-			</li>
-			<li>No mouse click to advance to the next slide. I consider it annoying.</li>
-			<li>Doesn't work in mobile :(</li>
-		</ul>
-	</section>
 </section>
-
 <section>
+	
 	<header class="slide">
-		<h1>Plugins</h1>
+		<h1>What next?</h1>
 	</header>
 	
 	<section class="slide">
-		<h2>Plugin: CSS Snippets</h2>
-		<pre>new CSSSnippet(document.getElementById('snippet'));</pre>
+		<h2>What next?</h2>
+		<p>Where can we take this tool?</p>
 		<ul>
-			<li>Dynamically edit CSS and reflect the results in any element's style
+			<li class="delayed">Most popular modules</li>
+		</ul>
+	</section>
+	
+	<section class="slide centred">
+		<img src="img/pack.png"/>
+	</section>
+	
+	<section class="slide">
+		<h2>What next?</h2>
+		<p>Where can we take this tool?</p>
+		<ul>
+			<li class="delayed">Most popular modules</li>
+			<li class="delayed">
+				Indicator of project health
 				<ul>
-					<li>Which one? Specify a selector with the <code>data-subject</code> attribute or leave blank for the slide to be the subject</li>
-				</ul>
-			<li>Automatically prefixes CSS3 properties/values, when needed
-				<ul>
-					<li>Also does it with the style attribute (statically) if the element is not a text field (doesn't work in IE and Firefox 3.6)</li>
+					<li>Who uses this module?</li>
+					<li>Find well maintained modules</li>
+					<li>Visibility on complexity</li>
 				</ul>
 			</li>
-			<li>Textarea automatically adjusts rows/font-size on line break (use class <code>dont-adjust</code> to turn off)</li>
-		</ul>
-	</section>
-	
-	<section class="slide">
-		<h2>CSS Snippets demo</h2>
-		<p>Edit the following CSS code:</p>
-		<textarea class="snippet">background-color:red;
-background-image: linear-gradient(red, #600)</textarea>
-	</section>
-	
-	<section class="slide" id="animation-demo">
-		<h2>CSS Snippets: raw CSS</h2>
-		<textarea class="snippet" data-raw>@keyframes rainbow {
-	from, to { background: red }
-	16% { background: yellow }
-	33% { background: green }
-	50% { background: aqua }
-	66% { background: blue }
-	83% { background: fuchsia }
-}
-
-#animation-demo { animation: 30s rainbow infinite; }</textarea>
-	</section>
-	
-	<section class="slide">
-		<h2>Plugin: CSS Controls</h2>
-		<ul>
-			<li>Use sliders and other controls to adjust CSS values
+			<li class="delayed">
+				A more useful tool
 				<ul>
-					<li>Which one? Specify a selector with the <code>data-subject</code> attribute or leave blank for the slide to be the subject</li>
-					<li>Specify style with <code>data-style</code> (use <code>{value}</code> where the result will be)</li>
+					<li>Per project RSS feed</li>
+					<li>Notifications</li>
+					<li>Private repositories support</li>
+					<li>Personal projects status overview page</li>
+					<li>AUTO: Clone latest version, update dependencies, run tests - will it blend?</li>
 				</ul>
-			<li>Automatically prefixes CSS3 properties/values, when needed</li>
+			</li>
 		</ul>
 	</section>
 	
-	<section class="slide" id="css-controls-demo">
-		<h2>CSS Controls demo</h2>
-		<label>Slide lightness: 
-			<input type="range" min="0" max="255" value="128" data-style="background-color:rgb({value}, {value}, {value});" class="css-control" />
-		</label>
-		<label>
-			border-width:
-			<input type="number" min="0" max="60" value="30" data-style="border-width: {value}px;" class="css-control" size="5" />
-		</label>
-		<label>
-			font-family:
-			<select data-style="font-family: {value};" class="css-control">
-				<option selected>sans-serif</option>
-				<option>Georgia, serif</option>
-				<option>Consolas, monospace</option>
-				<option>'Trebuchet MS', sans-serif</option>
-			</select>
-		</label>
-	</section>
-	
 	<section class="slide">
-		<h2>Plugin: Code highlight</h2>
+		<h2>Some hurdles</h2>
 		<ul>
-			<li>Syntax highlighting for every <code>&lt;code&gt;</code> element with a <code>lang</code> attribute.</li>
-			<li>Only highlights when the slide becomes active, for performance</li>
-			<li>Currently only supports JavaScript, but it's easy to add any language</li>
-			<li>Styling done through easy to understand classes like <code>.string</code> or <code>.comment</code></li>
+			<li class="delayed">Some people depend exclusively on absolute versions</li>
+			<li class="delayed">Some people don't want to use the badge</li>
+			<li class="delayed">
+				What to do about the reckless version ranges<br/>
+				<code>*</code> <code>latest</code> <code>&gt;= 0.0.0</code>
+			</li>
 		</ul>
 	</section>
 	
 	<section class="slide">
-		<h2>Code highlight example</h2>
-		<pre><code lang="javascript">// Comment
-document.addEventListener('DOMAttrModified',function(e) {
-  var node = e.target, attr = e.attrName;
-  if(/^input$/i.test(node.nodeName) 
-    &amp;&amp; (attr === 'placeholder' || attr === 'value')
-    || foo > 5)
-      Placeholder.update(node);
-}, false);</code></pre>
+		<h2>EOF</h2>
+		<h3>David</h3>
+		<p>
+			<a href="https://david-dm.org/">https://david-dm.org</a><br/>
+			<a href="http://davidiswatching.tumblr.com/">http://davidiswatching.tumblr.com</a><br/>
+			<a href="https://github.com/alanshaw/david">https://github.com/alanshaw/david</a><br/>
+			<a href="https://github.com/alanshaw/david-www">https://github.com/alanshaw/david-www</a><br/>
+			<a href="https://github.com/alanshaw/david-presentation">https://github.com/alanshaw/david-presentation</a>
+		</p>
+
+		<h3>Alan</h3>
+		<p>
+			<a href="https://twitter.com/_alanshaw">https://twitter.com/_alanshaw</a><br/>
+			<a href="https://github.com/alanshaw">https://github.com/alanshaw</a>
+		</p>
+		
+		<h3>Slides</h3>
+		<p>
+			<a href="https://github.com/LeaVerou/CSSS">https://github.com/LeaVerou/CSSS</a>
+		</p>
 	</section>
+	
 </section>
-<footer class="slide" title="The End">
-	<h2>Thank you!</h2>
-	<p>Get it or contribute at <a href="http://github.com/LeaVerou/CSSS">http://github.com/LeaVerou/CSSS</a></p>
-	<p>Credits:</p>
-	<ul>
-		<li><a href="http://lukeroberts.us/2008/12/wallpaper-colourful-wood/">Colored wood background by Luke Roberts</a></li>
-		<li>The name CSSS is actually inspired by S5, as you could probably guess ;-)</li>
-		<li>A big thanks to the community at Github for various contributions to this project</li>
-	</ul>
+
+<footer class="slide">
+	<h2>Questions?</h2>
 </footer>
 
 <script src="slideshow.js"></script>
