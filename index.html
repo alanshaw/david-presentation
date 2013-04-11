@@ -14,100 +14,152 @@
 
 <header id="intro" class="slide">
 	<h1>
-		<object data="logo.svg" width="100%" type="image/svg+xml">
-			<img src="logo.png" alt="CSSS: CSS-based SlideShow System" />
-		</object>
+		<span>Dependency management in Node</span><br/>
+		David is watching
 	</h1>
-	<p class="attribution">By Lea Verou</p>
+	<p class="attribution">By Alan Shaw</p>
 </header>
 <section>
 	<header class="slide">
 		<h1>Introduction</h1>
 	</header>
 	
-	<section class="slide" title="CSSS: Introduction">
-		<h2>What is it?</h2>
-		<p>A simple framework for building presentations with modern web standards</p>
-		<ul>
-			<li class="delayed">An HTML file contains the whole presentation</li>
-			<li class="delayed">Themes as CSS files</li>
-			<li class="delayed">JavaScript handles what CSS can't (keyboard shortcuts etc)</li>
+	<section class="slide">
+		<h2>What is David?</h2>
+		<ul class="delayed">
+			<li>Freaky</li>
+			<li>Hipster</li>
+			<li>Geek</li>
 		</ul>
+		<p class="delayed">A service that helps you keep your project dependencies up to date.</p>
+		<p class="delayed">A Node module, CLI tool and website.</p>
+	</section>
+</section>
+<section>
+	
+	<header class="slide">
+		<h1>Node Module</h1>
+	</header>
+	
+	<section class="slide">
+		<h2>Node Module</h2>
+		<p>David inspects dependencies (or devDependencies) and figures out what is out of date.</p>
+		<p class="delayed">You can get:</p>
+		<ol>
+			<li class="delayed">A list of all dependencies in your project</li>
+			<li class="delayed">A list of updated dependencies in your project</li>
+			<li class="delayed">A list of updated STABLE dependencies in your project</li>
+		</ol>
+		<p class="delayed">Repeat for devDependencies.</p>
+		<p class="delayed">For each dependency, david tells you:</p>
+		<ol>
+			<li class="delayed">The latest version</li>
+			<li class="delayed">The latest STABLE version</li>
+			<li class="delayed">The semver version or range your project currently requires</li>
+		</ol>
 	</section>
 	
 	<section class="slide">
-		<h2>History</h2>
-		<ul>
-			<li class="delayed">I had to create a presentation for my talk at <a href="http://front-trends.com">Front Trends 2010</a></li>
-			<li class="delayed">The only web-based presentation systems I knew of didn't fit my needs</li>
-			<li class="delayed">&hellip;so I rolled up my own</li>
-			<li class="delayed">FT2010 attendees asked me to release it</li>
-			<li class="delayed">and here it is! ;-)</li>
-		</ul>
+		<h2>Some code</h2>
+		<pre><code lang="javascript">
+var david = require("david");
+var manifest = {/* Your package.json */};
+
+david.getUpdatedDependencies(manifest, {dev: false, stable: true}, function(err, deps) {
+	console.log('dependencies with newer STABLE versions for', manifest.name);
+	console.log(deps);
+});
+
+// Example output:
+// dependencies with newer STABLE versions for aaa
+// {
+//   foo: {required: "~0.3.4", stable: "0.4.0", latest: "0.5.0-pre"},
+//   bar: {required: "~1.0.0", stable: "1.2.0", latest: "1.2.0"}
+// }
+		</code></pre>
 	</section>
 	
-	<section class="slide" id="navigation">
-		<h2>Navigation</h2>
-		<p>Only through keyboard for now :(</p>
-		<ul>
-			<li>→ or ↓ to advance to the next slide or incrementally displayed item</li>
-			<li>← or ↑ to go to the previous slide or incrementally displayed item</li>
-			<li>Ctrl* + → or Ctrl* + ↓ to jump to the next slide</li>
-			<li>Ctrl* + ← or Ctrl* + ↑ to jump to the previous slide</li>
-			<li>Home to go to the first slide, End to go to the last</li>
-			<li>Ctrl* + G to jump to an arbitrary slide (by slide number or identifier)</li>
-		</ul>
-		<p>* Ctrl or Shift actually. Only Shift works in Opera.</p>
-	</section>
 </section>
 
 <section>
 	<header class="slide">
-		<h1>Features</h1>
+		<h1>CLI</h1>
 	</header>
 	
 	<section class="slide">
-		<h2>Thumbnail view</h2>
-		<p>Press Ctrl+H (or Shift+H if you're in Opera) now.</p>
-		<p class="delayed">Cool, huh? You can press Ctrl+Shift+H to see all slides (warning: can be slow!)</p>
+		<h2>CLI</h2>
+		<p>Install david globally <code>npm install david -g</code></p>
 	</section>
 	
+	<section id="slide-cli-img" class="slide centred">
+		<img src="img/david-cli.png"/>
+	</section>
+</section>
+
+<section>
+	
+	<header class="slide">
+		<h1>Website</h1>
+	</header>
+	
 	<section class="slide">
-		<h2>Timer</h2>
+		<h2>Website</h2>
+		<p>Uses <a href="http://expressjs.com/">expressjs</a>, built using <a href="http://gruntjs.com/">grunt</a>, <a href="https://github.com/caolan/nodeunit">nodeunit</a> for tests. Help from <a href="http://d3js.org/">d3</a> for data visualisations.</p>
 		<ul>
-			<li>Timer in the form of a progress bar on the top</li>
-			<li>Define the talk duration with the attribute <code>data-duration</code> on the <code>body</code></li>
-			<li>Style the timer and the end state with the selectors <code>#timer</code> and <code>#timer.end</code> respectively.</li>
+			<li class="delayed"><a href="https://david-dm.org/">https://david-dm.org</a></li>
+			<li class="delayed">Scrape your GitHub package.json. Show you some prettys.</li>
+			<li class="delayed">Embeddable status badges!!!!!1</li>
 		</ul>
 	</section>
 	
+	<section class="slide centred">
+		<img src="img/jam.png"/>
+	</section>
+	
+	<section class="slide centred">
+		<img src="img/jam-tree.png"/>
+	</section>
+
+</section>
+<section>
+	
+	<header class="slide">
+		<h1>Semantic Versioning</h1>
+	</header>
+	
 	<section class="slide">
-		<h2>Presenter view</h2>
-		<p>This slide has presenter notes. They are only visible in presenter view (Ctrl+P or Shift+P).</p>
-		<p class="presenter-notes">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<h2>semver</h2>
+		<p>semver is the version standard.</p>
+		<p class="delayed">NPM uses semver. NPM allows you to specify version ranges. This is fantastic!</p>
+		<p class="delayed"><code>~1.0.2</code></p>
+		<p class="delayed">This is shorthand for <code>>= 1.0.2 < 1.1.0</code></p>
+		<p class="delayed">
+			It is saying: If the major or minor version increases then I need to retest my code to check it works on the new version, so don’t depend on that. Although, if there are bug fixes, I want them, and whilst I understand that a bugfix release could break my software, it isn’t meant to, so I’m willing to take the gamble.
+			<br/><br/>
+			<a href="http://semver.org/">http://semver.org</a><br/>
+			<a href="https://npmjs.org/doc/json.html#Tilde-Version-Ranges">https://npmjs.org/doc/json.html#Tilde-Version-Ranges</a>
+		</p>
 	</section>
 	
 	<section class="slide">
-		<style scoped>
-			h2 {
-				font-size: 200%;
-				font-weight: bold;
-			}
-		</style>
-		<h2><code>&lt;style scoped /&gt;</code></h2>
-		<p>You can use the HTML5 <code>scoped</code> attribute on style elements in slides, to only style the current slide or inside sections that include multiple slides to style all of them and nothing else.</p>
-		<p>For example, inspect this slide and then run <code>$$('style[scoped]')[0].sheet.cssRules[0].selectorText</code> in the console to see how the original selector gets changed.</p>
-	</section>
-	
-	<section class="slide">
-		<h2>More features</h2>
+		<h2>Out of date?</h2>
 		<ul>
-			<li class="delayed">IDs are dynamically assigned by JavaScript&hellip;</li>
-			<li class="delayed">&hellip;but you can also assign your own, bringing the best of both worlds</li>
-			<li class="delayed">Incremental display of slide contents (just add <code>class="delayed"</code>)</li>
-			<li class="delayed">Slide scaling based on window size (size everything you want to be scalable in ems)</li>
-			<li class="delayed">Document.title changing according to slide title (fetched either from the <code>title</code> attribute or the slide's heading)</li>
+			<li class="delayed">Newer STABLE versions</li>
+			<li class="delayed">
+				Newer non-stable is NOT out of date<br/>
+				e.g. required: ~0.5.0, stable: 0.5.8, latest: 0.6.0-pre
+			</li>
+			<li class="delayed">Pinned dependencies might not be out of date.</li>
 		</ul>
+		<p class="delayed">...what?</p>
+		
+		<p class="delayed emphasis">Absolute versions, repositories or tags.</p>
+		
+		<p class="delayed">I’ve seen a lot of absolute versions for dependencies, which is fine (you know who you are, you have your reasons), but I also see a lot of reckless version ranges: <code>&gt;= 0.3.14</code>, <code>*</code>, <code>latest</code> which are just mad. How can you possibly know your code will still work as your dependencies transition between major and minor version numbers?</p>
+	</section>
+	
+	<section class="slide centred">
+		<img src="img/crazies.png"/>
 	</section>
 	
 	<section class="slide">

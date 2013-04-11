@@ -5,9 +5,20 @@
 }
 
 #intro h1 {
-	width: 60%;
-	min-height: 500px;
-	margin: 5% auto 0;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 100;
+	font-size: 400%;
+	left: 0;
+	line-height: 1;
+	margin-top: -0.6em;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 30%;
+}
+
+#intro h1 span {
+	font-size: 48%;
 }
 
 #intro .attribution {
@@ -18,24 +29,20 @@
 	line-height: .3;
 	color: rgba(0,0,0,.7);
 	text-shadow: none;
-	background: url(img/rainbow-wood.jpg) bottom;
+	background: url(img/david.jpg) bottom;
 	padding:.6em 0 0;
 	overflow: hidden;
+}
+
+#slide-cli-img img {
+	margin-top: 3em;
+}
+
+.centred {
+	text-align: center;
 }
 
 
 #css-controls-demo label {
 	display: block;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:0) {
-/* hack to avoid using the Object element in Safari/WebKit, due to WebKit Bug 27190 */
-	object[type="image/svg+xml"] {
-		display: none;
-	}
-	
-	#intro h1 {
-		background: url(logo.svg) no-repeat center;
-		background-size:100% auto;
-	}
 }
