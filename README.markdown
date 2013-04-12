@@ -1,5 +1,4 @@
-# CSSS
-### CSS-based SlideShow System
+David Presentaion
+=================
 
-Warning: Only works in latest Firefox, Opera, Safari or Chrome.
-For more information, see the [sample slideshow](http://lea.verou.me/csss/sample-slideshow.html) 
+A short informal presentation about [david-dm.org](https://david-dm.org).
