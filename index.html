@@ -43,14 +43,12 @@
 	
 	<section class="slide">
 		<h2>Node Module</h2>
-		<p>David inspects dependencies (or devDependencies) and figures out what is out of date.</p>
 		<p class="delayed">You can get:</p>
 		<ol>
 			<li class="delayed">A list of all dependencies in your project</li>
 			<li class="delayed">A list of updated dependencies in your project</li>
 			<li class="delayed">A list of updated STABLE dependencies in your project</li>
 		</ol>
-		<p class="delayed">Repeat for devDependencies.</p>
 		<p class="delayed">For each dependency, david tells you:</p>
 		<ol>
 			<li class="delayed">The latest version</li>
@@ -132,10 +130,8 @@ david.getUpdatedDependencies(manifest, {dev: false, stable: true}, function(err,
 		<p>semver is the version standard.</p>
 		<p class="delayed">NPM uses semver. NPM allows you to specify version ranges. This is fantastic!</p>
 		<p class="delayed"><code>~1.0.2</code></p>
-		<p class="delayed">This is shorthand for <code>>= 1.0.2 < 1.1.0</code></p>
+		<p class="delayed">This is shorthand for <code>&gt;= 1.0.2 &lt; 1.1.0</code></p>
 		<p class="delayed">
-			It is saying: If the major or minor version increases then I need to retest my code to check it works on the new version, so don’t depend on that. Although, if there are bug fixes, I want them, and whilst I understand that a bugfix release could break my software, it isn’t meant to, so I’m willing to take the gamble.
-			<br/><br/>
 			<a href="http://semver.org/">http://semver.org</a><br/>
 			<a href="https://npmjs.org/doc/json.html#Tilde-Version-Ranges">https://npmjs.org/doc/json.html#Tilde-Version-Ranges</a>
 		</p>
@@ -155,7 +151,6 @@ david.getUpdatedDependencies(manifest, {dev: false, stable: true}, function(err,
 		
 		<p class="delayed emphasis">Absolute versions, repositories or tags.</p>
 		
-		<p class="delayed">I’ve seen a lot of absolute versions for dependencies, which is fine (you know who you are, you have your reasons), but I also see a lot of reckless version ranges: <code>&gt;= 0.3.14</code>, <code>*</code>, <code>latest</code> which are just mad. How can you possibly know your code will still work as your dependencies transition between major and minor version numbers?</p>
 	</section>
 	
 	<section class="slide centred">
