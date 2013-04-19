@@ -27,6 +27,8 @@ Avoid breaking changes whilst automatically getting the benefits of bug and secu
 
 It is saying: If the major or minor version increases then I need to retest my code to check it works on the new version, so don’t depend on that. Although, if there are bug fixes, I want them, and whilst I understand that a bugfix release could break my software, it isn’t meant to, so I’m willing to take the gamble.
 
+Using tilde version numbers appears to be the emerging best practice.
+
 #16
 ===
 Orange -> Pinned dependencies do not count towards your status badge. 
