@@ -26,8 +26,11 @@ section > header.slide > h1 {
 }
 
 html {
-	background: black url(img/david.jpg) bottom center;
-	background-size: cover;
+	background-color: black;
+	/*background-size: cover;*/
+	background-image: url(img/bg-david.png), url(img/html.jpg);
+	background-position: center center, center bottom;
+	background-repeat: no-repeat;
 }
 
 body {
