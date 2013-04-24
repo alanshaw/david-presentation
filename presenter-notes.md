@@ -29,9 +29,13 @@ It is saying: If the major or minor version increases then I need to retest my c
 
 Using tilde version numbers appears to be the emerging best practice.
 
+NPM install adds a tilde, 95% of projects submitted to david use tilde version numbers.
+
 #16
 ===
 Orange -> Pinned dependencies do not count towards your status badge. 
+
+Pinned dependencies might not be out of date because David doesn't know if you've done it for a reason.
 
 I’ve seen a lot of absolute versions for dependencies, which is fine -> reasons
 
